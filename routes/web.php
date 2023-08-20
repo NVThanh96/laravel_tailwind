@@ -1,32 +1,26 @@
 <?php
 
-use App\Http\Controllers\WebController;
+use App\Http\Controllers\web\WebController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\View;
 
-
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
-Route::get('/', function () {
-    return view('welcome');
+Route::prefix('/')->controller(WebController::class)->group(function () {
+    Route::get('',      'home')->name('home');
+    Route::get('index',      'index')->name('index');
+    Route::get('calender',      'calender')->name('calender');
+    Route::get('test',      'test')->name('test');
+    //     Route::post ('/login',      'login')                    ->name('admin.login');
+    //     Route::get  ('/logout',     'logout')                   ->name('admin.logout');
+    //     Route::get  ('/register',   'showRegistrationForm')     ->name('admin.register');
+    //     Route::post ('/register',   'register')                 ->name('admin.register');
+    //     Route::get  ('/',           'home')                     ->name('admin.home');
 });
-Route::get('/index', [WebController::class, 'index']);
 
-
- Route::prefix('')->controller(WebController::class)->group(function () {
-     Route::get  ('index',      'index')            ->name('index');
-//     Route::post ('/login',      'login')                    ->name('admin.login');
-//     Route::get  ('/logout',     'logout')                   ->name('admin.logout');
-//     Route::get  ('/register',   'showRegistrationForm')     ->name('admin.register');
-//     Route::post ('/register',   'register')                 ->name('admin.register');
-//     Route::get  ('/',           'home')                     ->name('admin.home');
- });
+Route::prefix('/project')->controller(WebController::class)->group(function () {
+    Route::get('project',      'home')->name('home');
+    //     Route::post ('/login',      'login')                    ->name('admin.login');
+    //     Route::get  ('/logout',     'logout')                   ->name('admin.logout');
+    //     Route::get  ('/register',   'showRegistrationForm')     ->name('admin.register');
+    //     Route::post ('/register',   'register')                 ->name('admin.register');
+    //     Route::get  ('/',           'home')                     ->name('admin.home');
+});

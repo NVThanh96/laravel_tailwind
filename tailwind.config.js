@@ -1,8 +1,18 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: [
-      './resources/**/*.{html,js}',
-      './resources/views/welcome.blade.php',
-    ],
-    // ...
-  }
+  darkMode: 'class',
+  content: [
+    "./resources/**/*.blade.php",
+    "./resources/**/*.js",
+    "./resources/**/*.vue",
+  ],
+  theme: {
+    extend: {
+      // colors: {
+      //   darkBg: '#0f1c2d', // Replace with your dark background color
+      //   lightBg: '#ffffff', // Replace with your light background color
+      // },
+    },
+  },
+  plugins: [],
+}
