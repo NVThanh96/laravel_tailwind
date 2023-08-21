@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\View;
 
 Route::prefix('/')->controller(WebController::class)->group(function () {
-    Route::get('',      'home')->name('home');
+    Route::get('home',      'home')->name('home');
     Route::get('index',      'index')->name('index');
     Route::get('calender',      'calender')->name('calender');
     Route::get('test',      'test')->name('test');

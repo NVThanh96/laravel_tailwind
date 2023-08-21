@@ -13,6 +13,7 @@ module.exports = {
       //   lightBg: '#ffffff', // Replace with your light background color
       // },
     },
+    
   },
   plugins: [],
 }
