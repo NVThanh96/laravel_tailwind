@@ -9,6 +9,7 @@ Route::prefix('/')->controller(WebController::class)->group(function () {
     Route::get('index',      'index')->name('index');
     Route::get('calender',      'calender')->name('calender');
     Route::get('test',      'test')->name('test');
+    Route::get('new',      'new')->name('new');
     //     Route::post ('/login',      'login')                    ->name('admin.login');
     //     Route::get  ('/logout',     'logout')                   ->name('admin.logout');
     //     Route::get  ('/register',   'showRegistrationForm')     ->name('admin.register');
